@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Cadastro</h2>
+<form method="POST" action="{{ url_for('auth.register') }}">
+    <div class="form-group">
+        <label for="name">Nome Completo</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="role">Tipo de Conta</label>
+        <select id="role" name="role">
+            <option value="client">Cliente (Quero contratar serviços)</option>
+            <option value="provider">Prestador (Quero oferecer serviços)</option>
+        </select>
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock %}

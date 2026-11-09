@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Meu Painel</h2>
+<p>Olá, <strong>{{ current_user.name }}</strong>! Bem-vindo de volta.</p>
+
+<div style="background: #e9ecef; padding: 20px; border-radius: 5px; margin-top: 20px;">
+    {% if current_user.role == 'provider' %}
+        <h3>Área do Prestador de Serviços</h3>
+        <p>Aqui você gerenciará seus serviços oferecidos e seus agendamentos recebidos.</p>
+        <!-- Futuros botões de "Adicionar Serviço" entrarão aqui -->
+    {% else %}
+        <h3>Área do Cliente</h3>
+        <p>Aqui você verá o histórico dos seus agendamentos feitos.</p>
+    {% endif %}
+</div>
+{% endblock %}
